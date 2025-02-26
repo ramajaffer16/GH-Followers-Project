@@ -31,6 +31,8 @@ class GFTextField: UITextField {
         minimumFontSize = 12
         adjustsFontSizeToFitWidth = true
         placeholder = "Enter your username"
+        keyboardType = .default
+        returnKeyType = .go
     }
     
 } 
