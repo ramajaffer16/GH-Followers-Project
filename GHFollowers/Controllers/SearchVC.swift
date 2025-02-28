@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchVC: UIViewController , UITextFieldDelegate {
+class SearchVC: UIViewController, UITextFieldDelegate, UITableViewDelegate {
     
     let logoImage = UIImageView()
     let textField = GFTextField()
@@ -25,6 +25,11 @@ class SearchVC: UIViewController , UITextFieldDelegate {
         view.backgroundColor = .systemBackground
         
     
+    }
+    
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 //    Dismiss keyboard after entering username
     func dismissKeyBoard(){
