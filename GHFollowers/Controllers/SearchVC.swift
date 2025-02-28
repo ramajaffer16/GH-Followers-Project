@@ -62,6 +62,7 @@ class SearchVC: UIViewController , UITextFieldDelegate {
 // command action for the button and parsing the data
     @objc func pushViewController(){
         guard isUsernameEntered else {
+            presentGFAlertonMainThread(title: "Empty Username", message: "Please enter username. We need to know who to look for 😂", buttonTitle: "ok")
             return
         }
         let followerslist = FollowersList()
