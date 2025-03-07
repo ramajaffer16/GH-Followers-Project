@@ -27,7 +27,7 @@ class SearchVC: UIViewController, UITextFieldDelegate, UITableViewDelegate {
     
     }
     
-    override func viewWillAppear(_ animated: Bool){
+    override func viewWillAppear(_ animated: Booli){
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }

@@ -13,6 +13,7 @@ class GFAvatarImageView: UIImageView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        config()
     }
     
     required init?(coder: NSCoder) {
@@ -24,6 +25,7 @@ class GFAvatarImageView: UIImageView {
         layer.cornerRadius = 10
         clipsToBounds = true
         
+        translatesAutoresizingMaskIntoConstraints = false
         
     }
     
