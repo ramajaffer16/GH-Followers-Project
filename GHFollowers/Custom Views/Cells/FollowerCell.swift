@@ -16,6 +16,7 @@ class FollowerCell: UICollectionViewCell {
     
     override init(frame: CGRect ) {
         super.init(frame: frame)
+        config()
     }
     
     
@@ -23,6 +24,8 @@ class FollowerCell: UICollectionViewCell {
         addSubview(username)
         addSubview(avatarImage)
         
+        username.translatesAutoresizingMaskIntoConstraints = false
+        avatarImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([avatarImage.topAnchor.constraint(equalTo: topAnchor, constant: padding),avatarImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),avatarImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),avatarImage.heightAnchor.constraint(equalTo: avatarImage.widthAnchor)])
         
         NSLayoutConstraint.activate([username.topAnchor.constraint(equalTo: avatarImage.bottomAnchor, constant: 12),username.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),username.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),username.heightAnchor.constraint(equalToConstant: 20)])
@@ -31,5 +34,11 @@ class FollowerCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func set(follower: FollowersResponse) {
+            username.text = follower.login
+//            avatarImage.downloadImage(from: follower.avatarUrl) // Assuming `downloadImage(from:)` exists
+        }
+        
     
 }
